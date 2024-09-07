@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>
+            National <br />
+            Museum <br />
+            India
+          </h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Visit &#9662;</a></li>
+          <li><a href="#">Exhibitions and events &#9662;</a></li>
+          <li><a href="#">Collection &#9662;</a></li>
+          <li><a href="#">Gallery &#9662;</a></li>
+          <li><a href="#">Notices &#9662;</a></li>
+          <li><a href="#">Contact us &#9662;</a></li>
+        </ul>
+        <ul class="nav-right">
+          <li>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Shop</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-search"></i> Search</a>
+          </li>
+          <li><a href="#">How to reach</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="image-slider">
+      <div class="slides">
+        <img
+          src="https://ramaarya.blog/wp-content/uploads/2017/06/nationalmuseum_bronzes.jpg"
+          alt="Image 1"
+        />
+        <img
+          src="https://www.trawell.in/admin/images/upload/468456269Sarnath_Museum.jpg"
+          alt="Image 2"
+        />
+        <img
+          src="https://victoriamemorial-cal.org/wp-content/uploads/2024/04/Victoria-Memorial-Hall-Kolkata.jpg"
+          alt="Image 3"
+        />
+        <img
+          src="https://victoriamemorial-cal.org/wp-content/uploads/2024/04/banner_5.jpg"
+          alt="Image 4"
+        />
+        <img
+          src="https://www.lucknowportal.com/wp-content/uploads/Lucknow-State-Museum-Buddha-Statue.jpg"
+          alt="Image 5"
+        />
+      </div>
+    </div>
+
+    <div class="exhibitions">
+      <div class="exhibition-title">
+        <h2>Exhibitions and events</h2>
+        <a href="#" class="see-all">See all exhibitions and events &#9654;</a>
+      </div>
+      <div class="exhibition-container">
+        <div class="exhibition-item">
+          <div class="exhibition-info">
+            <h3>Silk Roads</h3>
+            <p>Exhibition</p>
+            <p>26 September 2024 – 23 February 2025</p>
+            <button>Book now</button>
+          </div>
+          <div class="exhibition-image">
+            <img
+              src="https://assets.editorial.aetnd.com/uploads/2017/11/silk-road-gettyimages-51055788.jpg"
+              alt="Silk Roads"
+            />
+          </div>
+        </div>
+        <div class="exhibition-item">
+          <div class="exhibition-info">
+            <h3>Mohenjodaro</h3>
+            <h4>what have we here?</h4>
+            <p>Exhibition</p>
+            <p>17 October 2024 – 9 February 2025</p>
+            <button class="chat-bot" onclick="openChatbot()">Book now</button>
+          </div>
+          <div class="exhibition-image">
+            <img
+              src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201606/mi-647_062216042506.jpg?VersionId=q3zTmBcFHmnh0pe9Jg8HS4R0wtuADmzB"
+              alt="Mohenjodaro"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <!-- Chatbot Section with Language Selection -->
+    <div class="chatbot-container" style="text-align: center">
+      <!-- Language Selection Buttons Inside Chatbot Section -->
+      <div style="margin-bottom: 10px">
+        <button id="englishBtn">English</button>
+        <button id="hindiBtn">Hindi</button>
+      </div>
+
+      <!-- Dialogflow Messenger -->
+      <df-messenger
+        id="chatbot"
+        chat-icon="https://png.pngtree.com/png-clipart/20230401/original/pngtree-smart-chatbot-cartoon-clipart-png-image_9015126.png"
+        intent="WELCOME"
+        chat-title="Disha"
+        agent-id="7a873155-2b2a-4edc-9557-2a1ab7eee7fe"
+        language-code="en"
+      ></df-messenger>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+      // Function to change chatbot language
+      function changeLanguage(languageCode) {
+        const chatbot = document.getElementById("chatbot");
+        chatbot.setAttribute("language-code", languageCode);
+      }
+
+      // Add event listeners to buttons
+      document.getElementById("englishBtn").addEventListener("click", () => {
+        changeLanguage("en");
+      });
+
+      document.getElementById("hindiBtn").addEventListener("click", () => {
+        changeLanguage("hi");
+      });
+    </script>
+  </body>
+</html>
